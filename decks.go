@@ -32,7 +32,7 @@ func (d Decks) NameList() []string {
 func getUserDecks() Decks {
 	var decks Decks
 
-	file, err := os.Open("decks.json")
+	file, err := os.Open("json/decks.json")
 	if err != nil {
 		fmt.Println(err)
 	}

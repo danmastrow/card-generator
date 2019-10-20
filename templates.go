@@ -44,7 +44,7 @@ func viewTemplatesScreen() fyne.CanvasObject {
 func getUserTemplates() Templates {
 	var templates Templates
 
-	file, err := os.Open("templates.json")
+	file, err := os.Open("json/templates.json")
 	if err != nil {
 		fmt.Println(err)
 	}

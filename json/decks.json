@@ -1,0 +1,15 @@
+{
+  "decks": [
+    {
+      "name": "Example Deck",
+      "cardTypes": ["Active"],
+      "cards": [
+        {
+          "name": "example card",
+          "cardType": { "name": "Active" },
+          "description": "This is an example card used for illustration purposes!"
+        }
+      ]
+    }
+  ]
+}

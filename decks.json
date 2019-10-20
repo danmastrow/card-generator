@@ -1,9 +1,0 @@
-{
-  "decks": [
-    {
-      "name": "Example Deck",
-      "cardTypes": ["Active"],
-      "cards": [{ "name": "example card", "cardType": { "name": "Active" } }]
-    }
-  ]
-}

@@ -11,12 +11,7 @@ import (
 
 func main() {
 	app := app.New()
-	file, newlyCreated := getUserGlobalConfig("config.json")
-	if newlyCreated {
-
-	}
-	fmt.Println(file)
-
+	_, _ = getUserGlobalConfig("json/config.json")
 	showMainWindow(app)
 }
 
@@ -35,8 +30,6 @@ func showMainWindow(app fyne.App) {
 		widget.NewTabItemWithIcon("Templates", theme.HomeIcon(), viewTemplatesScreen()),
 		widget.NewTabItemWithIcon("Cards", theme.ContentCopyIcon(), viewCardsScreen()))
 	tabs.SetTabLocation(widget.TabLocationLeading)
-
 	w.SetContent(tabs)
-
 	w.ShowAndRun()
 }
