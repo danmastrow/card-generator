@@ -10,11 +10,15 @@ import (
 )
 
 func generateCardsScreen() fyne.CanvasObject {
+	decks := getUserDecks()
+	deckSelect := widget.NewSelect(decks.NameList(), func(string) {})
+
 	fileInput := widget.NewEntry()
 	browseButton := widget.NewButtonWithIcon("Browse", theme.ContentCopyIcon(), func() {})
 	browseButton.OnTapped = func() { openFileBrowser(fileInput, browseButton) }
 	return widget.NewForm(
 		&widget.FormItem{"", widget.NewLabelWithStyle("To start generating cards please choose a template", fyne.TextAlignCenter, fyne.TextStyle{Bold: true})},
+		&widget.FormItem{"Selected Deck", widget.NewHBox(deckSelect)},
 		&widget.FormItem{"Template Image", widget.NewHBox(browseButton, fileInput)},
 	)
 }

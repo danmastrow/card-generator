@@ -11,10 +11,12 @@ import (
 
 func main() {
 	app := app.New()
-	_, newlyCreated := parseJsonFile("config.json", UserGlobalConfig{})
+	file, newlyCreated := getUserGlobalConfig("config.json")
 	if newlyCreated {
-		showSetGlobalConfiguration(app)
+
 	}
+	fmt.Println(file)
+
 	showMainWindow(app)
 }
 
@@ -24,7 +26,7 @@ func showMainWindow(app fyne.App) {
 
 	w.SetMainMenu(fyne.NewMainMenu(fyne.NewMenu("File",
 		fyne.NewMenuItem("New", func() { fmt.Println("Menu New") }),
-		// a quit item will be appended to our first menu
+		// a quit item will be appended to the first menu
 	), fyne.NewMenu("Edit",
 		fyne.NewMenuItem("Settings", func() { fmt.Println("Menu Settings") }),
 	)))
