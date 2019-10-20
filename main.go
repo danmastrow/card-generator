@@ -31,8 +31,9 @@ func showMainWindow(app fyne.App) {
 		fyne.NewMenuItem("Settings", func() { fmt.Println("Menu Settings") }),
 	)))
 	tabs := widget.NewTabContainer(
-		widget.NewTabItemWithIcon("View Decks", theme.HomeIcon(), viewDecksScreen()),
-		widget.NewTabItemWithIcon("Generate Cards", theme.ContentCopyIcon(), generateCardsScreen()))
+		widget.NewTabItemWithIcon("Decks", theme.HomeIcon(), viewDecksScreen()),
+		widget.NewTabItemWithIcon("Templates", theme.HomeIcon(), viewTemplatesScreen()),
+		widget.NewTabItemWithIcon("Cards", theme.ContentCopyIcon(), viewCardsScreen()))
 	tabs.SetTabLocation(widget.TabLocationLeading)
 
 	w.SetContent(tabs)

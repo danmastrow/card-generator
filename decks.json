@@ -1,1 +1,9 @@
-{ "decks": [{ "name": "default", "cards": [{ "name": "example card" }] }] }
+{
+  "decks": [
+    {
+      "name": "Example Deck",
+      "cardTypes": ["Actives"],
+      "cards": [{ "name": "example card" }]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "templates": [
+    { "name": "Example Template", "defaultWidth": 1700, "defaulthHeight": 2600 }
+  ]
+}

@@ -5,11 +5,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-)
 
-type Card struct {
-	Name string
-}
+	"fyne.io/fyne"
+	"fyne.io/fyne/widget"
+)
 
 type Deck struct {
 	Name  string
@@ -17,8 +16,9 @@ type Deck struct {
 }
 
 type Decks struct {
-	Name  string
-	Decks []Deck
+	Name      string
+	CardTypes []CardType
+	Decks     []Deck
 }
 
 func (d Decks) NameList() []string {
@@ -44,6 +44,31 @@ func getUserDecks() Decks {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(decks)
 	return decks
+}
+
+func viewDecksScreen() fyne.CanvasObject {
+	w := widget.NewVBox(
+		widget.NewLabelWithStyle("Decks:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true}),
+	)
+
+	deckPicker := createDeckPickerUi()
+	for _, deck := range deckPicker {
+		w.Append(deck)
+	}
+
+	return w
+}
+
+func createDeckPickerUi() []fyne.CanvasObject {
+	result := []fyne.CanvasObject{}
+	decks := getUserDecks()
+
+	for _, deck := range decks.Decks {
+		result = append(result, widget.NewButton(deck.Name, func() {
+			// TODO: navigate to deck viewer with that deck selected
+		}))
+	}
+
+	return result
 }
