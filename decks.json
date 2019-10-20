@@ -2,8 +2,8 @@
   "decks": [
     {
       "name": "Example Deck",
-      "cardTypes": ["Actives"],
-      "cards": [{ "name": "example card" }]
+      "cardTypes": ["Active"],
+      "cards": [{ "name": "example card", "cardType": { "name": "Active" } }]
     }
   ]
 }

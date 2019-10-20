@@ -21,6 +21,13 @@ type Templates struct {
 	Templates []Template
 }
 
+func (t Templates) NameList() []string {
+	var list []string
+	for _, deck := range t.Templates {
+		list = append(list, deck.Name)
+	}
+	return list
+}
 func viewTemplatesScreen() fyne.CanvasObject {
 	w := widget.NewVBox(
 		widget.NewLabelWithStyle("Templates:", fyne.TextAlignCenter, fyne.TextStyle{Bold: true}),
